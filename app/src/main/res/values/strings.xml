@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">VestiRuyaAlpha</string>
+    <string name="required_field">This field is required</string>
+</resources>

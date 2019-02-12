@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_170sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/banner" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="center"
+                android:text="Welcome are you:"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_14sdp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btnTailor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15sdp"
+                android:text="Tailor"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_13sdp"
+                app:backgroundTint="@color/colorBlue" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btnCustmoer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15sdp"
+                android:text="Customer"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_13sdp"
+                app:backgroundTint="@color/colorBlue" />
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

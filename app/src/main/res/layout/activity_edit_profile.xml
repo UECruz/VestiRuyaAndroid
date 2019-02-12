@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.EditProfileActivity"
+        android:background="@color/colorBlue">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:background="@color/colorGray"
+                app:contentInsetStart="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/icBack"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/back_icon"
+                        android:tint="@color/colorBlue2"
+                        android:layout_marginLeft="@dimen/_10sdp"/>
+
+                    <TextView
+                        android:id="@+id/tvUserName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerInParent="true"
+                        android:singleLine="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_14sdp"
+                        android:text="Edit Profile"/>
+
+
+                </RelativeLayout>
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_placeholder"
+                    android:layout_marginTop="@dimen/_10sdp"/>
+
+                <RelativeLayout
+                    android:id="@+id/rlSelect"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:background="#A9CBFF"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_20sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Select Form Gallery"
+                        android:layout_centerInParent="true"
+                        android:textColor="@color/black"/>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:weightSum="1"
+                    android:layout_marginTop="@dimen/_20sdp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Name:"
+                        android:textSize="@dimen/_14sdp"
+                        android:textColor="@color/black"
+                        android:layout_weight="0.3"
+                        android:layout_gravity="center_vertical"/>
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/edtName"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_33sdp"
+                        android:background="@drawable/bg_edt"
+                        android:singleLine="true"
+                        android:textSize="@dimen/_13sdp"
+                        android:layout_weight="0.7"
+                        android:hint="Name"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:weightSum="1"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_20sdp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Address:"
+                        android:textSize="@dimen/_14sdp"
+                        android:textColor="@color/black"
+                        android:layout_weight="0.3"
+                        android:layout_gravity="center_vertical"/>
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/edtAddress"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_33sdp"
+                        android:background="@drawable/bg_edt"
+                        android:singleLine="true"
+                        android:textSize="@dimen/_13sdp"
+                        android:layout_weight="0.7"
+                        android:hint="Address"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:weightSum="1"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_20sdp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Address2:"
+                        android:textSize="@dimen/_14sdp"
+                        android:textColor="@color/black"
+                        android:layout_weight="0.3"
+                        android:layout_gravity="center_vertical"/>
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/edtAddress2"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_33sdp"
+                        android:background="@drawable/bg_edt"
+                        android:singleLine="true"
+                        android:textSize="@dimen/_13sdp"
+                        android:layout_weight="0.7"
+                        android:hint="Address"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:weightSum="1"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_20sdp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Email:"
+                        android:textSize="@dimen/_14sdp"
+                        android:textColor="@color/black"
+                        android:layout_weight="0.3"
+                        android:layout_gravity="center_vertical"/>
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/edtEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_33sdp"
+                        android:background="@drawable/bg_edt"
+                        android:singleLine="true"
+                        android:textSize="@dimen/_13sdp"
+                        android:layout_weight="0.7"
+                        android:hint="Email"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:clickable="false"
+                        android:gravity="center"
+                        android:inputType="textEmailAddress"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:weightSum="1"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_20sdp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Password:"
+                        android:textSize="@dimen/_14sdp"
+                        android:textColor="@color/black"
+                        android:layout_weight="0.3"
+                        android:layout_gravity="center_vertical"/>
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/edtPassword"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_33sdp"
+                        android:background="@drawable/bg_edt"
+                        android:singleLine="true"
+                        android:textSize="@dimen/_13sdp"
+                        android:layout_weight="0.7"
+                        android:hint="Password"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlSave"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:background="#A9CBFF"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_20sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Save"
+                        android:layout_centerInParent="true"
+                        android:textColor="@color/black"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</layout>

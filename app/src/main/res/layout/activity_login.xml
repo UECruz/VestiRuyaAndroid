@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_170sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/banner" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/etEmail"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_33sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_edt"
+                android:gravity="center"
+                android:hint="Email"
+                android:padding="@dimen/_5sdp"
+                android:singleLine="true"
+                android:textSize="@dimen/_13sdp" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/etPass"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_33sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/bg_edt"
+                android:gravity="center"
+                android:inputType="textPassword"
+                android:hint="Password"
+                android:padding="@dimen/_5sdp"
+                android:singleLine="true"
+                android:textSize="@dimen/_13sdp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btnLogin"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:text="Login"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_13sdp"
+                app:backgroundTint="@color/colorBlue1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center"
+                android:text="New Sign Up?"
+                android:id="@+id/btnSignUp"
+                android:textColor="@color/colorBlue1"
+                android:textSize="@dimen/_12sdp" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</layout>

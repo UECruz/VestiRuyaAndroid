@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.java1.fullsail.vestiruyaalpha">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activity.activity.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.activity.LoginTypeSelectorActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activity.activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.activity.SignUpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.activity.CustomizeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.activity.SummaryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.activity.CustomerDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.activity.TailorDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.activity.ProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.activity.EditProfileActivity" />
+        <activity android:name=".activity.activity.TailorHomeScreen" />
+        <activity android:name=".activity.activity.ListofJobActivity" />
+        <activity android:name=".activity.activity.ItemDescriptionActivity" />
+        <activity android:name=".activity.activity.ChatActivity" />
+        <activity android:name=".activity.activity.JobDetailActivity" />
+        <activity android:name=".activity.activity.CustomerInfoActivity" />
+        <activity android:name=".activity.activity.TailorInfoActivity" />
+        <activity android:name=".activity.activity.OrderPreviewActivity" />
+        <activity android:name=".activity.activity.PaymentActivity"></activity>
+    </application>
+
+</manifest>

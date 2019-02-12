@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="horizontal">
+
+    <com.kaopiz.kprogresshud.SpinView
+        android:id="@+id/progress_wheel"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/tvProgressMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Please wait while loading.."
+        android:textSize="@dimen/_13sdp"
+        android:visibility="gone" />
+
+</RelativeLayout>
