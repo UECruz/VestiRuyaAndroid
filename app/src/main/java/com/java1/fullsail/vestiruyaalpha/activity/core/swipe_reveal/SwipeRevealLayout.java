@@ -33,50 +33,22 @@ public class SwipeRevealLayout extends ViewGroup {
     public static final int DRAG_EDGE_TOP =    0x1 << 2;
     public static final int DRAG_EDGE_BOTTOM = 0x1 << 3;
 
-    /**
-     * The secondary view will be under the main view.
-     */
     public static final int MODE_NORMAL = 0;
 
-    /**
-     * The secondary view will stick the edge of the main view.
-     */
     public static final int MODE_SAME_LEVEL = 1;
 
-    /**
-     * Main view is the view which is shown when the layout is closed.
-     */
     private View mMainView;
 
-    /**
-     * Secondary view is the view which is shown when the layout is opened.
-     */
     private View mSecondaryView;
 
-    /**
-     * The rectangle position of the main view when the layout is closed.
-     */
     private Rect mRectMainClose = new Rect();
 
-    /**
-     * The rectangle position of the main view when the layout is opened.
-     */
     private Rect mRectMainOpen  = new Rect();
 
-    /**
-     * The rectangle position of the secondary view when the layout is closed.
-     */
     private Rect mRectSecClose  = new Rect();
 
-    /**
-     * The rectangle position of the secondary view when the layout is opened.
-     */
     private Rect mRectSecOpen   = new Rect();
 
-    /**
-     * The minimum distance (px) to the closest drag edge that the SwipeRevealLayout
-     * will disallow the parent to intercept touch event.
-     */
     private int mMinDistRequestDisallowParent = 0;
 
     private boolean mIsOpenBeforeInit = false;
