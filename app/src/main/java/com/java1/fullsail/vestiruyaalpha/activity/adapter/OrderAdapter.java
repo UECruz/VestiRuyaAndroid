@@ -40,11 +40,7 @@ public class OrderAdapter extends RecyclerView.Adapter{
         if (list != null && 0 <= position && position < list.size()) {
             final JobModel data = list.get(position);
 
-            // Use ViewBindHelper to restore and save the open/close state of the SwipeRevealView
-            // put an unique string id as value, can be any string which uniquely define the data
             binderHelper.bind(holder.binding.swipeLayout, data.getKey());
-
-            // Bind your data here
             holder.bind(data);
         }
 
@@ -90,7 +86,6 @@ public class OrderAdapter extends RecyclerView.Adapter{
                 String price = data.getPrice().replace("$", "");
 
                 binding.tvOrderPrice.setText("$"+ String.format("%.2f", Double.valueOf(price)));
-                //binding.tvOrderPrice.setText(data.getPrice());
             }
             else {
                 binding.tvOrderPrice.setText("$" + String.format("%.2f", Double.valueOf(data.getPrice())));

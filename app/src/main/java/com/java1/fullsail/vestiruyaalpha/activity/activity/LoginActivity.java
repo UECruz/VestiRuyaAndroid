@@ -111,7 +111,7 @@ public class LoginActivity extends BaseActivity {
                                                     else if(dataSnapshot.hasChild("city"))
                                                     {
                                                         user.setCity(dataSnapshot.child("city").getValue().toString());
-                                                    }//user.setCitystate(childDataSnapshot.child("City,State").getValue().toString());
+                                                    }
 
                                                     user.setKey(childDataSnapshot.getKey());
                                                     saveProfileData(mActivity, user);
