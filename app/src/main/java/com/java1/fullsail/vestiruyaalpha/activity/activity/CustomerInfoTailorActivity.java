@@ -1,11 +1,9 @@
 package com.java1.fullsail.vestiruyaalpha.activity.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 
 import com.bumptech.glide.Glide;
@@ -16,26 +14,26 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 import com.java1.fullsail.vestiruyaalpha.R;
 import com.java1.fullsail.vestiruyaalpha.activity.core.CommonUtils;
-import com.java1.fullsail.vestiruyaalpha.activity.core.Constant;
 import com.java1.fullsail.vestiruyaalpha.activity.model.User;
-import com.java1.fullsail.vestiruyaalpha.databinding.ActivityProfileBinding;
+import com.java1.fullsail.vestiruyaalpha.databinding.ActivityCustomerInfoTailorBinding;
 
-public class ProfileActivity extends BaseActivity {
-
-    ActivityProfileBinding binding;
+public class CustomerInfoTailorActivity extends BaseActivity {
+    ActivityCustomerInfoTailorBinding binding;
     private String userType;
-    private  User user;
+    private User user;
+    String customerId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mActivity = this;
-        binding = DataBindingUtil.setContentView(mActivity, R.layout.activity_profile);
+        binding = DataBindingUtil.setContentView(mActivity, R.layout.activity_customer_info_tailor);
         setUpClicks();
 
-        userType=CommonUtils.getStringSharedPref(mActivity, Constant.SF_Type,"");
+        userType= "Customers";
 
         DatabaseReference ref = null;
-        ref = mDatabase.child(userType).child(firebaseUser.getUid());
+        customerId = getIntent().getStringExtra("customerId");
+        ref = mDatabase.child(userType).child(customerId);
 
         mDialog.showCustomDalog();
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -57,13 +55,22 @@ public class ProfileActivity extends BaseActivity {
                 saveProfileData(mActivity, user);
 
 
-
                 binding.tvName.setText(user.getUsername());
                 binding.tvEmail.setText(user.getEmail());
-                binding.tvAddress.setText(user.getAddress());
+
+                if(user.getAddress()!=null && !user.getAddress().isEmpty())
+                {
+                    user.setAddress(user.getAddress());
+                }
+                else
+                {
+                    binding.tvAddress.setVisibility(View.GONE);
+                }
 
                 if(user.getProfilePic()!=null && !user.getProfilePic().isEmpty())
                 {
+
+
                     RequestOptions options = new RequestOptions()
                             .centerCrop()
                             .placeholder(R.drawable.ic_placeholder)
@@ -72,6 +79,8 @@ public class ProfileActivity extends BaseActivity {
                     Glide.with(mActivity).load(user.getProfilePic()).apply(options).into(binding.icProfile);
                 }
 
+
+
             }
 
             @Override
@@ -79,10 +88,7 @@ public class ProfileActivity extends BaseActivity {
                 mDialog.closeDialog();
             }
         });
-
-
     }
-
     private void setUpClicks() {
 
         binding.btnLogout.setOnClickListener(this);
@@ -127,6 +133,7 @@ public class ProfileActivity extends BaseActivity {
                 if(data.getExtras()!=null)
                 {
 
+
                     String name=data.getStringExtra("username");
                     String email=data.getStringExtra("email");
                     String address=data.getStringExtra("address");
@@ -143,6 +150,7 @@ public class ProfileActivity extends BaseActivity {
                             .error(R.drawable.ic_placeholder);
 
                     Glide.with(mActivity).load(download).apply(options).into(binding.icProfile);
+
                 }
             }
         }

@@ -108,7 +108,7 @@ public class JobDetailActivity extends BaseActivity {
 
                 Intent i=new Intent(mActivity,CustomerInfoActivity.class);
                 i.putExtra("customerId",model.getCustomerId());
-                i.putExtra("name",model.getName());
+             //   i.putExtra("name",model.getName());
                 startActivity(i);
                 break;
         }

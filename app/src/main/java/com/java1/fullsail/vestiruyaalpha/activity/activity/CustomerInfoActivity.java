@@ -33,6 +33,7 @@ public class CustomerInfoActivity extends BaseActivity {
 
     ActivityCustomerInfoBinding binding;
     private String customerId;
+    private String customerName;
     private Measurement.MeasureItem measureItem;
     private  User user;
 
@@ -43,8 +44,8 @@ public class CustomerInfoActivity extends BaseActivity {
         binding = DataBindingUtil.setContentView(mActivity, R.layout.activity_customer_info);
 
         customerId = getIntent().getStringExtra("customerId");
-        String customerName = getIntent().getStringExtra("name");
-        binding.tvUsername.setText(customerName);
+//        customerName = getIntent().getStringExtra("name");
+//        binding.tvUsername.setText(customerName);
         setListeners();
 
         loadData();

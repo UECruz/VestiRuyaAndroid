@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -134,13 +135,55 @@ public class CustomizeFragment extends BaseFragment {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     for (DataSnapshot dataChild : dataSnapshot.getChildren()) {
+                        if (dataChild.getKey().equals("Lace")){
+//                           if( dataChild.getValue().equals("Appligue")){
+                            for (DataSnapshot childChild : dataChild.getChildren()) {
+                                if (childChild.getValue() instanceof ArrayList) {
+
+                                    for (DataSnapshot childChild1 : childChild.getChildren()) {
+                                        Customize customize = childChild1.getValue(Customize.class);
+                                        Log.d("name",customize.getName());
+                                        list.add(customize);
+                                    }
+                                }
+                            }
+                            //}
+//                            if( dataChild.getValue().equals("Plain")){
+//                                for (DataSnapshot childChild : dataChild.getChildren()) {
+//                                    if (childChild.getValue() instanceof ArrayList) {
+//
+//                                        for (DataSnapshot childChild1 : childChild.getChildren()) {
+//                                            Customize customize = childChild1.getValue(Customize.class);
+//                                            Log.d("name1",customize.getName());
+//                                            list.add(customize);
+//                                        }
+//                                    }
+//                                }
+//                            }
+//                            if( dataChild.getValue().equals("Trim")){
+//                                for (DataSnapshot childChild : dataChild.getChildren()) {
+//                                    if (childChild.getValue() instanceof ArrayList) {
+//
+//                                        for (DataSnapshot childChild1 : childChild.getChildren()) {
+//                                            Customize customize = childChild1.getValue(Customize.class);
+//                                            Log.d("name2",customize.getName());
+//                                            list.add(customize);
+//                                        }
+//                                    }
+//                                }
+//                            }
+
+                        }
                         if (dataChild.getValue() instanceof ArrayList) {
+
                             for (DataSnapshot childChild : dataChild.getChildren()) {
                                 Customize customize = childChild.getValue(Customize.class);
+                                Log.d("name4",customize.getName());
                                 list.add(customize);
                             }
                         } else {
                             Customize customize = dataChild.getValue(Customize.class);
+                            //    Log.d("name5",customize.getName());
                             list.add(customize);
                         }
                     }

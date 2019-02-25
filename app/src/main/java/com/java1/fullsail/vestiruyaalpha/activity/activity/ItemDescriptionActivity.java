@@ -1,10 +1,13 @@
 package com.java1.fullsail.vestiruyaalpha.activity.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -28,6 +31,7 @@ public class ItemDescriptionActivity extends BaseActivity {
     private String jobkey;
     private User user;
     private JobModel jobmodel;
+    ImageView icImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +46,10 @@ public class ItemDescriptionActivity extends BaseActivity {
 
         double price=Double.valueOf(jobmodel.getPrice());
         binding.tvPrice.setText("$"+ String.format("%.2f", price));
+
+        Log.d("userid",jobmodel.getUserid());
+        Log.d("userid1",jobmodel.getKey());
+        Log.d("userid2",jobmodel.getTailorID());
         binding.tvDressType.setText(model.getBodytype());
         binding.tvFabric.setText(model.getFabric());
         binding.tvBackDetails.setText(model.getBackdetail());
@@ -49,8 +57,30 @@ public class ItemDescriptionActivity extends BaseActivity {
         binding.tvNeckline.setText(model.getNeckline());
         binding.tvSleeve.setText(model.getSleeves());
         binding.tvStrap.setText(model.getStraps());
+        binding.icImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(mActivity,CustomerInfoTailorActivity.class);
+                i.putExtra("customerId",jobmodel.getUserid());
+                startActivity(i);
+            }
+        });
+        binding.tvUsername.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(mActivity,CustomerInfoTailorActivity.class);
+                i.putExtra("customerId",jobmodel.getUserid());
+                startActivity(i);
+            }
+        });
         user=getProfileData(mActivity);
+        getFabric();
         setUpClicks();
+
+    }
+
+    private void getFabric() {
+
 
     }
 
@@ -129,6 +159,7 @@ public class ItemDescriptionActivity extends BaseActivity {
                         }
                     }
                 });
+
                 break;
 
             case R.id.btnCancel:

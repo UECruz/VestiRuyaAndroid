@@ -57,6 +57,7 @@
         <activity android:name=".activity.activity.TailorInfoActivity" />
         <activity android:name=".activity.activity.OrderPreviewActivity" />
         <activity android:name=".activity.activity.PaymentActivity"></activity>
+        <activity android:name=".activity.activity.CustomerInfoTailorActivity" />
     </application>
 
 </manifest>
