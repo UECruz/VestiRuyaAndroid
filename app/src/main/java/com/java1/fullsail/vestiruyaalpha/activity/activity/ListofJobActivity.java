@@ -21,6 +21,7 @@ import com.java1.fullsail.vestiruyaalpha.activity.OnItemClickListener;
 import com.java1.fullsail.vestiruyaalpha.activity.adapter.JobAdapter;
 import com.java1.fullsail.vestiruyaalpha.activity.core.CommonUtils;
 import com.java1.fullsail.vestiruyaalpha.activity.core.Constant;
+import com.java1.fullsail.vestiruyaalpha.activity.model.InterestsShownModel;
 import com.java1.fullsail.vestiruyaalpha.activity.model.JobModel;
 import com.java1.fullsail.vestiruyaalpha.databinding.ActivityListofJobBinding;
 
@@ -61,11 +62,20 @@ public class ListofJobActivity extends BaseActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 mDialog.closeDialog();
-                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                outer: for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
 
                     String jobid = postSnapshot.getKey();
                     JobModel model = postSnapshot.getValue(JobModel.class);
                     model.setKey(jobid);
+                    List<InterestsShownModel> jobModels=model.getInterestsShown();
+                    if(jobModels!=null)
+                        for (InterestsShownModel interestsShownModel:jobModels)
+                        {
+                            if(interestsShownModel.getTailorID().equalsIgnoreCase(user.getKey()))
+                            {
+                                continue outer;
+                            }
+                        }
                     list.add(model);
                 }
 
@@ -79,6 +89,21 @@ public class ListofJobActivity extends BaseActivity {
                 Log.d("error", databaseError.getMessage());
             }
         });
+       /* ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                JobModel model = dataSnapshot.getValue(JobModel.class);
+                //user.setKey(dataSnapshot.getKey());
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                mDialog.dismiss();
+                Toast.makeText(mActivity, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+            }
+        });*/
+
 
     }
 

@@ -1,4 +1,4 @@
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -31,7 +31,8 @@
                         android:singleLine="true"
                         android:text="Back"
                         android:textColor="@color/colorBlue2"
-                        android:textSize="@dimen/_14sdp" />
+                        android:textSize="@dimen/_14sdp"
+                        tools:ignore="HardcodedText" />
 
                     <TextView
                         android:id="@+id/tvTitle"
@@ -42,7 +43,8 @@
                         android:singleLine="true"
                         android:text="Select Your Dress Type"
                         android:textColor="@android:color/black"
-                        android:textSize="@dimen/_13sdp" />
+                        android:textSize="@dimen/_13sdp"
+                        tools:ignore="HardcodedText" />
 
 
                 </RelativeLayout>

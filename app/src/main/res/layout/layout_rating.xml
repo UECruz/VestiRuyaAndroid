@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rlMain"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -15,13 +16,16 @@
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/_10sdp"/>
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:contentDescription="TODO"
+            tools:ignore="HardcodedText,RtlHardcoded" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/icImage"
-            android:layout_marginLeft="@dimen/_10sdp">
+            android:layout_marginLeft="@dimen/_10sdp"
+            tools:ignore="RtlHardcoded">
 
             <RatingBar
                 android:id="@+id/ratings"
@@ -40,7 +44,8 @@
                 android:layout_below="@+id/ratings"
                 android:text="abc"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_14sdp"/>
+                android:textSize="@dimen/_14sdp"
+                tools:ignore="HardcodedText" />
 
         </RelativeLayout>
 

@@ -1,5 +1,6 @@
 package com.java1.fullsail.vestiruyaalpha.activity.activity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -22,6 +23,7 @@ public class OrderPreviewActivity extends BaseActivity {
     private String from;
     private TailorJob tailorJob;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,15 +36,24 @@ public class OrderPreviewActivity extends BaseActivity {
         if(from.equals("tailorinfo"))
         {
             getData(1);
+            binding.tvDate.setVisibility(View.GONE);
+            binding.tvtailorName.setVisibility(View.GONE);
+            binding.label1.setVisibility(View.GONE);
+            binding.label2.setVisibility(View.GONE);
         }
         else if(from.equals("payment"))
         {
 
             binding.tvHeading.setText("Thank you");
-            binding.llScrollview.setVisibility(View.GONE);
+            binding.llScrollview.setVisibility(View.VISIBLE);
             binding.llyesno.setVisibility(View.GONE);
             binding.rlOk.setVisibility(View.VISIBLE);
             binding.toolbar.setVisibility(View.GONE);
+            binding.tvDate.setVisibility(View.VISIBLE);
+            binding.tvtailorName.setVisibility(View.VISIBLE);
+            binding.label1.setVisibility(View.VISIBLE);
+            binding.label2.setVisibility(View.VISIBLE);
+            getData(1);
         }
 
         setUpClicks();
@@ -61,6 +72,9 @@ public class OrderPreviewActivity extends BaseActivity {
         binding.tvNeckline.setText(tailorJob.getItems().getNeckline());
         binding.tvSleeve.setText(tailorJob.getItems().getSlevee());
         binding.tvStrap.setText(tailorJob.getItems().getStrap());
+        binding.tvtailorName.setText(tailorJob.getName());
+        binding.tvDate.setText(tailorJob.getDate());
+
     }
 
     private void setUpClicks() {

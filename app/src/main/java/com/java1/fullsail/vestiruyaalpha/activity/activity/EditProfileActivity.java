@@ -20,6 +20,8 @@ import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -39,10 +41,12 @@ import com.java1.fullsail.vestiruyaalpha.activity.core.Constant;
 import com.java1.fullsail.vestiruyaalpha.activity.core.FileUtils;
 import com.java1.fullsail.vestiruyaalpha.activity.model.User;
 import com.java1.fullsail.vestiruyaalpha.databinding.ActivityEditProfileBinding;
+import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.util.HashMap;
 
+@SuppressWarnings("ALL")
 public class EditProfileActivity extends BaseActivity {
     ActivityEditProfileBinding binding;
     private String[] PERMISSIONS = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
@@ -58,9 +62,26 @@ public class EditProfileActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         mActivity = this;
         binding = DataBindingUtil.setContentView(mActivity, R.layout.activity_edit_profile);
-        userType= CommonUtils.getStringSharedPref(mActivity, Constant.SF_Type,"");
+        userType=CommonUtils.getStringSharedPref(mActivity,Constant.SF_Type,"");
         getData();
         setUpClicks();
+        getData(1);
+        if(user.getProfilePic()!=null && !user.getProfilePic().isEmpty())
+        {
+
+                   /* Glide.with(this).placeholder(R.drawable.placeholder)
+                            .load(user.getProfilePic())// image url
+                            .into(binding.icProfile);*/
+
+            //Picasso.get().load(user.getProfilePic()).placeholder(R.drawable.ic_placeholder).into(binding.icProfile);
+
+            RequestOptions options = new RequestOptions()
+                    .centerCrop()
+                    .placeholder(R.drawable.ic_placeholder)
+                    .error(R.drawable.ic_placeholder);
+
+            Glide.with(mActivity).load(user.getProfilePic()).apply(options).into(binding.profileImage);
+        }
     }
 
     private void getData() {
@@ -74,7 +95,12 @@ public class EditProfileActivity extends BaseActivity {
         binding.icBack.setOnClickListener(this);
         binding.rlSave.setOnClickListener(this);
         binding.rlSelect.setOnClickListener(this);
+        binding.upload1.setOnClickListener(this);
+        binding.upload2.setOnClickListener(this);
+        binding.upload3.setOnClickListener(this);
     }
+
+    int photoFlag;
 
     @Override
     public void onClick(View view) {
@@ -94,7 +120,32 @@ public class EditProfileActivity extends BaseActivity {
                 break;
 
             case R.id.rlSelect:
+                photoFlag = 1;
+                if (!hasPermissions(mActivity, PERMISSIONS)) {
+                    ActivityCompat.requestPermissions(mActivity, PERMISSIONS, PERMISSION_ALL);
+                } else {
 
+                    selectImage();
+                }
+                break;
+            case R.id.upload1:
+                photoFlag = 2;
+                if (!hasPermissions(mActivity, PERMISSIONS)) {
+                    ActivityCompat.requestPermissions(mActivity, PERMISSIONS, PERMISSION_ALL);
+                } else {
+                    selectImage();
+                }
+                break;
+            case R.id.upload2:
+                photoFlag = 3;
+                if (!hasPermissions(mActivity, PERMISSIONS)) {
+                    ActivityCompat.requestPermissions(mActivity, PERMISSIONS, PERMISSION_ALL);
+                } else {
+                    selectImage();
+                }
+                break;
+            case R.id.upload3:
+                photoFlag = 4;
                 if (!hasPermissions(mActivity, PERMISSIONS)) {
                     ActivityCompat.requestPermissions(mActivity, PERMISSIONS, PERMISSION_ALL);
                 } else {
@@ -144,6 +195,8 @@ public class EditProfileActivity extends BaseActivity {
     }
 
     private void updatedata() {
+
+
         mDialog.showCustomDalog();
         AuthCredential credential = EmailAuthProvider
                 .getCredential(usermodel.getEmail(), usermodel.getPassword());
@@ -205,6 +258,7 @@ public class EditProfileActivity extends BaseActivity {
         return true;
     }
 
+    /*permission result*/
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -215,6 +269,7 @@ public class EditProfileActivity extends BaseActivity {
                 } else {
                     Toast.makeText(mActivity, "Please grant permission to access files to add the profile picture", Toast.LENGTH_SHORT).show();
                 }
+                //noinspection UnnecessaryReturnStatement
                 return;
         }
     }
@@ -274,7 +329,18 @@ public class EditProfileActivity extends BaseActivity {
                     String path = FileUtils.getPath(mActivity, fileUri);
                     Bitmap bitmap = CommonUtils.handleSamplingAndRotationBitmap(path);
                     if (bitmap != null) {
-                        binding.profileImage.setImageBitmap(bitmap);
+                        if (photoFlag==1){
+                            binding.profileImage.setImageBitmap(bitmap);
+                        }
+                        if (photoFlag==2){
+                            binding.iv1.setImageBitmap(bitmap);
+                        }
+                        if (photoFlag==3){
+                            binding.iv2.setImageBitmap(bitmap);
+                        }
+                        if (photoFlag==4){
+                            binding.iv3.setImageBitmap(bitmap);
+                        }
                         String newPath = CommonUtils.saveImage(mActivity, bitmap, Constant.PROFILE_IMAGE);
                         fileUri = FileUtils.getUri(new File(newPath));
                         uploadFile(fileUri);
@@ -291,10 +357,22 @@ public class EditProfileActivity extends BaseActivity {
                     String path = FileUtils.getPath(mActivity, fileUri);
                     Bitmap bitmap = CommonUtils.handleSamplingAndRotationBitmap(path);
                     if (bitmap != null) {
-                        binding.profileImage.setImageBitmap(bitmap);
+                        if (photoFlag==1){
+                            binding.profileImage.setImageBitmap(bitmap);
+                        }
+                        if (photoFlag==2){
+                            binding.iv1.setImageBitmap(bitmap);
+                        }
+                        if (photoFlag==3){
+                            binding.iv2.setImageBitmap(bitmap);
+                        }
+                        if (photoFlag==4){
+                            binding.iv3.setImageBitmap(bitmap);
+                        }
                         String newPath = CommonUtils.saveImage(mActivity, bitmap, Constant.PROFILE_IMAGE);
                         fileUri = FileUtils.getUri(new File(newPath));
                         uploadFile(fileUri);
+                        // uploadFile(fileUri);
                     } else {
                         Toast.makeText(mActivity, "can't access this image please select another image", Toast.LENGTH_SHORT).show();
                     }
@@ -308,17 +386,32 @@ public class EditProfileActivity extends BaseActivity {
         }
     }
 
+    StorageReference childRef;
+
     private void uploadFile(Uri fileUri) {
 
         mDialog.showCustomDalog();
-        String childName;
+        String childName,childName1;
         if (userType.equals("Customers")) {
             childName = Constant.customers_profile_images;
+            childName1 = Constant.customers_sample_images;
         } else {
             childName = Constant.tailors_profile_images;
+            childName1 = Constant.tailors_sample_images;
+        }
+        if (photoFlag==1){
+            childRef = storageRef.child(childName).child(firebaseUser.getUid() + "_" + System.currentTimeMillis());
+        }
+        if (photoFlag==2){
+            childRef = storageRef.child(childName1).child(firebaseUser.getUid() + "_File_" + 1);
+        }
+        if (photoFlag==3){
+            childRef = storageRef.child(childName1).child(firebaseUser.getUid() + "_File_" + 2);
+        }
+        if (photoFlag==4){
+            childRef = storageRef.child(childName1).child(firebaseUser.getUid() + "_File_" + 3);
         }
 
-        final StorageReference childRef = storageRef.child(childName).child(firebaseUser.getUid() + "_" + System.currentTimeMillis());
         UploadTask uploadTask = childRef.putFile(fileUri);
         Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
             @Override
@@ -335,6 +428,7 @@ public class EditProfileActivity extends BaseActivity {
                 mDialog.closeDialog();
                 if (task.isSuccessful()) {
                     downloadUri = String.valueOf(task.getResult());
+                    user.setProfilePic(downloadUri);
                     HashMap<String,Object> map=new HashMap<>();
                     map.put("profilePic",downloadUri);
                     mDatabase.child(userType).child(firebaseUser.getUid()).updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -353,11 +447,43 @@ public class EditProfileActivity extends BaseActivity {
             }
         });
     }
+    private void getData(final int i) {
+        String childName,childName1;
+        if (userType.equals("Customers")) {
+            childName = Constant.customers_profile_images;
+            childName1 = Constant.customers_sample_images;
+        } else {
+            childName = Constant.tailors_profile_images;
+            childName1 = Constant.tailors_sample_images;
+        }
+        storageRef.child(childName1+"/" + firebaseUser.getUid() + "_File_" + i).getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+            @Override
+            public void onComplete(@NonNull Task<Uri> task) {
+                if (task.isSuccessful()) {
+                    int temp = i + 1;
+                    if (temp < 4) {
+                        getData(temp);
+                    }
+                    if (i == 1) {
+                        Picasso.get().load(task.getResult()).error(R.drawable.ic_placeholder).placeholder(R.drawable.ic_placeholder).into(binding.iv1);
+                    } else if (i == 2) {
+                        Picasso.get().load(task.getResult()).error(R.drawable.ic_placeholder).placeholder(R.drawable.ic_placeholder).into(binding.iv2);
+                    } else if (i == 3) {
+                        Picasso.get().load(task.getResult()).error(R.drawable.ic_placeholder).placeholder(R.drawable.ic_placeholder).into(binding.iv3);
+                    }
+                }
+            }
 
+
+        });
+
+    }
     private void nextScreen()
     {
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
         Query query = rootRef.child(userType).child(firebaseUser.getUid()).child("Job");
+
+        //final Query query = reference.child(userType).child(firebaseUser.getUid());
 
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -377,5 +503,4 @@ public class EditProfileActivity extends BaseActivity {
         });
 
     }
-
 }

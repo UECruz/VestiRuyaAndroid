@@ -131,7 +131,7 @@ public class MainActivity extends BaseActivity{
 
     private void loadMyOrders() {
         mDialog.showCustomDalog();
-        mDatabase.child(Constant.CUSTOMER).child(Constant.ORDERS)./*orderByChild("userId").equalTo(user.getKey()).*/addValueEventListener(new ValueEventListener() {
+        mDatabase.child(Constant.CUSTOMER).child(Constant.ORDERS).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 mDialog.closeDialog();

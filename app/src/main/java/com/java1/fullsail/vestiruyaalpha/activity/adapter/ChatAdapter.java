@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 public class ChatAdapter extends RecyclerView.Adapter{
     private ArrayList<ChatModel> chatModelArrayList;
+    @SuppressWarnings("CanBeFinal")
     private String userId;
 
     public ChatAdapter(ArrayList<ChatModel> chatModelArrayList, String userId) {

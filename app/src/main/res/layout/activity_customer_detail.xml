@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -30,7 +32,8 @@
                         android:singleLine="true"
                         android:text="Cancel"
                         android:textColor="@color/colorBlue2"
-                        android:textSize="@dimen/_14sdp" />
+                        android:textSize="@dimen/_14sdp"
+                        tools:ignore="HardcodedText" />
 
                     <TextView
                         android:id="@+id/tvTitle"
@@ -39,9 +42,10 @@
                         android:layout_centerVertical="true"
                         android:gravity="center"
                         android:singleLine="true"
-                        android:text="Title"
+                        android:text="Customer Additional Info"
                         android:textColor="@android:color/black"
-                        android:textSize="@dimen/_13sdp" />
+                        android:textSize="@dimen/_13sdp"
+                        tools:ignore="HardcodedText" />
 
 
                 </RelativeLayout>
@@ -70,7 +74,8 @@
                     android:text="Body Images:"
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/_10sdp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -92,7 +97,9 @@
                             android:id="@+id/iv1"
                             android:layout_width="@dimen/_55sdp"
                             android:layout_height="@dimen/_55sdp"
-                            android:scaleType="centerCrop" />
+                            android:scaleType="centerCrop"
+                            android:contentDescription="TODO"
+                            tools:ignore="HardcodedText" />
 
                         <TextView
                             android:id="@+id/tvSelect1"
@@ -102,7 +109,8 @@
                             android:padding="@dimen/_2sdp"
                             android:text="Upload Image"
                             android:textColor="@color/colorBlue2"
-                            android:textSize="@dimen/_11sdp" />
+                            android:textSize="@dimen/_11sdp"
+                            tools:ignore="HardcodedText" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -118,7 +126,8 @@
                             android:id="@+id/iv2"
                             android:layout_width="@dimen/_55sdp"
                             android:layout_height="@dimen/_55sdp"
-                            android:scaleType="centerCrop" />
+                            android:scaleType="centerCrop"
+                            android:contentDescription="TODO" />
 
                         <TextView
                             android:id="@+id/tvSelect2"
@@ -128,7 +137,8 @@
                             android:padding="@dimen/_2sdp"
                             android:text="Upload Image"
                             android:textColor="@color/colorBlue2"
-                            android:textSize="@dimen/_11sdp" />
+                            android:textSize="@dimen/_11sdp"
+                            tools:ignore="HardcodedText" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -144,7 +154,9 @@
                             android:id="@+id/iv3"
                             android:layout_width="@dimen/_55sdp"
                             android:layout_height="@dimen/_55sdp"
-                            android:scaleType="centerCrop" />
+                            android:scaleType="centerCrop"
+                            android:contentDescription="TODO"
+                            tools:ignore="HardcodedText" />
 
                         <TextView
                             android:id="@+id/tvSelect3"
@@ -154,7 +166,8 @@
                             android:padding="@dimen/_2sdp"
                             android:text="Upload Image"
                             android:textColor="@color/colorBlue2"
-                            android:textSize="@dimen/_11sdp" />
+                            android:textSize="@dimen/_11sdp"
+                            tools:ignore="HardcodedText" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -166,7 +179,8 @@
                     android:text="Measurement:"
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/_10sdp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -181,7 +195,8 @@
                         android:layout_weight="1"
                         android:text="Height:"
                         android:textColor="@android:color/black"
-                        android:textSize="@dimen/_12sdp" />
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="HardcodedText" />
 
                     <android.support.v7.widget.AppCompatEditText
                         android:id="@+id/etHeight"
@@ -195,7 +210,8 @@
                         android:inputType="number"
                         android:padding="@dimen/_5sdp"
                         android:singleLine="true"
-                        android:textSize="@dimen/_12sdp" />
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="HardcodedText" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -211,7 +227,8 @@
                         android:layout_weight="1"
                         android:text="Neck CIR"
                         android:textColor="@android:color/black"
-                        android:textSize="@dimen/_12sdp" />
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="HardcodedText" />
 
                     <android.support.v7.widget.AppCompatEditText
                         android:id="@+id/etNeck"
@@ -225,7 +242,8 @@
                         android:inputType="number"
                         android:padding="@dimen/_5sdp"
                         android:singleLine="true"
-                        android:textSize="@dimen/_12sdp" />
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="HardcodedText" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -241,7 +259,8 @@
                         android:layout_weight="1"
                         android:text="Chest CIR"
                         android:textColor="@android:color/black"
-                        android:textSize="@dimen/_12sdp" />
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="HardcodedText" />
 
                     <android.support.v7.widget.AppCompatEditText
                         android:id="@+id/etChest"
@@ -255,7 +274,8 @@
                         android:inputType="number"
                         android:padding="@dimen/_5sdp"
                         android:singleLine="true"
-                        android:textSize="@dimen/_12sdp" />
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="HardcodedText" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -271,7 +291,8 @@
                         android:layout_weight="1"
                         android:text="Waist CIR"
                         android:textColor="@android:color/black"
-                        android:textSize="@dimen/_12sdp" />
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="HardcodedText" />
 
                     <android.support.v7.widget.AppCompatEditText
                         android:id="@+id/etWaist"
@@ -285,7 +306,8 @@
                         android:inputType="number"
                         android:padding="@dimen/_5sdp"
                         android:singleLine="true"
-                        android:textSize="@dimen/_12sdp" />
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="HardcodedText" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -301,7 +323,8 @@
                         android:layout_weight="1"
                         android:text="Bust Size"
                         android:textColor="@android:color/black"
-                        android:textSize="@dimen/_12sdp" />
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="HardcodedText" />
 
                     <android.support.v7.widget.AppCompatEditText
                         android:id="@+id/etBust"
@@ -315,7 +338,8 @@
                         android:inputType="number"
                         android:padding="@dimen/_5sdp"
                         android:singleLine="true"
-                        android:textSize="@dimen/_12sdp" />
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="HardcodedText" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -331,7 +355,8 @@
                         android:layout_weight="1"
                         android:text="Arm Length"
                         android:textColor="@android:color/black"
-                        android:textSize="@dimen/_12sdp" />
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="HardcodedText" />
 
                     <android.support.v7.widget.AppCompatEditText
                         android:id="@+id/etArms"
@@ -345,7 +370,8 @@
                         android:inputType="number"
                         android:padding="@dimen/_5sdp"
                         android:singleLine="true"
-                        android:textSize="@dimen/_12sdp" />
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="HardcodedText" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -361,7 +387,8 @@
                         android:layout_weight="1"
                         android:text="Leg Length"
                         android:textColor="@android:color/black"
-                        android:textSize="@dimen/_12sdp" />
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="HardcodedText" />
 
                     <android.support.v7.widget.AppCompatEditText
                         android:id="@+id/etLegs"
@@ -375,7 +402,8 @@
                         android:inputType="number"
                         android:padding="@dimen/_5sdp"
                         android:singleLine="true"
-                        android:textSize="@dimen/_12sdp" />
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="HardcodedText" />
                 </LinearLayout>
 
                 <Button
@@ -388,7 +416,8 @@
                     android:text="Submit"
                     android:textAllCaps="false"
                     android:textColor="@color/colorBlue2"
-                    android:textSize="@dimen/_12sdp" />
+                    android:textSize="@dimen/_12sdp"
+                    tools:ignore="HardcodedText" />
 
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>

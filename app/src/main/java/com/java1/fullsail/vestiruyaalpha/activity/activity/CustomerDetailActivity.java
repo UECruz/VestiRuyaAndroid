@@ -34,11 +34,13 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+@SuppressWarnings("WhileLoopReplaceableByForEach")
 public class CustomerDetailActivity extends BaseActivity {
     ActivityCustomerDetailBinding binding;
     private final int PERMISSION_ALL = 100;
     private String[] PERMISSIONS = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
     private Uri fileUri;
+    @SuppressLint("UseSparseArrays")
     HashMap<Integer, String> hashMap = new HashMap<>();
     int index;
 
@@ -205,6 +207,7 @@ public class CustomerDetailActivity extends BaseActivity {
                 } else {
                     Toast.makeText(mActivity, "Please grant permission to access files to add images", Toast.LENGTH_SHORT).show();
                 }
+                //noinspection UnnecessaryReturnStatement
                 return;
         }
     }

@@ -9,13 +9,15 @@ import android.widget.Toast;
 
 import com.java1.fullsail.vestiruyaalpha.R;
 import com.java1.fullsail.vestiruyaalpha.activity.fragment.CustomizeFragment;
+import com.java1.fullsail.vestiruyaalpha.activity.model.Customize;
 import com.java1.fullsail.vestiruyaalpha.databinding.ActivityCustomizeBinding;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class CustomizeActivity extends BaseActivity {
     public ActivityCustomizeBinding binding;
-    public HashMap<String,String> summeryMap = new HashMap<>();
+    public HashMap<String, ArrayList<Customize>> summeryMap = new HashMap<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

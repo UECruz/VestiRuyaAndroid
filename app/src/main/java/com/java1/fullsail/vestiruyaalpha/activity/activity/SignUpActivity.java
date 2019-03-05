@@ -40,6 +40,7 @@ import com.java1.fullsail.vestiruyaalpha.databinding.ActivityRegistrationBinding
 import java.io.File;
 import java.util.HashMap;
 
+@SuppressWarnings("ALL")
 public class SignUpActivity extends BaseActivity {
     private final int PERMISSION_ALL = 100;
     private Uri fileUri;
@@ -230,6 +231,7 @@ public class SignUpActivity extends BaseActivity {
                 } else {
                     Toast.makeText(mActivity, "Please grant permission to access files to add the profile picture", Toast.LENGTH_SHORT).show();
                 }
+                //noinspection UnnecessaryReturnStatement
                 return;
         }
     }

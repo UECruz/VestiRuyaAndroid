@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -25,6 +24,7 @@ import com.java1.fullsail.vestiruyaalpha.databinding.ActivityItemDescriptionBind
 import java.util.HashMap;
 
 public class ItemDescriptionActivity extends BaseActivity {
+
     private ActivityItemDescriptionBinding binding;
     private Activity mActivity;
     private ItemModel model;
@@ -32,6 +32,7 @@ public class ItemDescriptionActivity extends BaseActivity {
     private User user;
     private JobModel jobmodel;
     ImageView icImage;
+    @SuppressLint({"DefaultLocale", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,10 +47,15 @@ public class ItemDescriptionActivity extends BaseActivity {
 
         double price=Double.valueOf(jobmodel.getPrice());
         binding.tvPrice.setText("$"+ String.format("%.2f", price));
-
-        Log.d("userid",jobmodel.getUserid());
-        Log.d("userid1",jobmodel.getKey());
-        Log.d("userid2",jobmodel.getTailorID());
+        binding.btnOkHistory.setVisibility(View.GONE);
+        binding.label1.setVisibility(View.GONE);
+        binding.label2.setVisibility(View.GONE);
+        binding.iv1.setVisibility(View.GONE);
+        binding.iv2.setVisibility(View.GONE);
+        binding.iv3.setVisibility(View.GONE);
+        binding.tvSelect1.setVisibility(View.GONE);
+        binding.tvSelect2.setVisibility(View.GONE);
+        binding.tvSelect3.setVisibility(View.GONE);
         binding.tvDressType.setText(model.getBodytype());
         binding.tvFabric.setText(model.getFabric());
         binding.tvBackDetails.setText(model.getBackdetail());
@@ -134,6 +140,7 @@ public class ItemDescriptionActivity extends BaseActivity {
                 tailorjob.setPrice(jobmodel.getPrice());
                 tailorjob.setPics(jobmodel.getPhotoImage());
                 tailorjob.setName(jobmodel.getUsername());
+                tailorjob.setDate(jobmodel.getDate());
 
                 ItemModel2 items=new ItemModel2();
                 items.setBackDetail(model.getBackdetail());
@@ -160,7 +167,9 @@ public class ItemDescriptionActivity extends BaseActivity {
                     }
                 });
 
+
                 break;
+
 
             case R.id.btnCancel:
 
@@ -171,4 +180,5 @@ public class ItemDescriptionActivity extends BaseActivity {
 
         }
     }
+
 }

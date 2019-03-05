@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -19,7 +20,9 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/_10sdp"
             android:scaleType="fitXY"
-            android:src="@drawable/banner" />
+            android:src="@drawable/banner"
+            android:contentDescription="TODO"
+            tools:ignore="HardcodedText" />
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btnPickImage"
@@ -31,7 +34,8 @@
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="@dimen/_13sdp"
-            app:backgroundTint="@color/colorBlue1" />
+            app:backgroundTint="@color/colorBlue1"
+            tools:ignore="HardcodedText" />
 
 
         <android.support.v7.widget.AppCompatEditText
@@ -45,7 +49,8 @@
             android:inputType="textPersonName"
             android:padding="@dimen/_5sdp"
             android:singleLine="true"
-            android:textSize="@dimen/_13sdp" />
+            android:textSize="@dimen/_13sdp"
+            tools:ignore="HardcodedText" />
 
         <android.support.v7.widget.AppCompatEditText
             android:id="@+id/Reg_email"
@@ -58,7 +63,8 @@
             android:inputType="textEmailAddress"
             android:padding="@dimen/_5sdp"
             android:singleLine="true"
-            android:textSize="@dimen/_13sdp" />
+            android:textSize="@dimen/_13sdp"
+            tools:ignore="HardcodedText" />
 
         <android.support.v7.widget.AppCompatEditText
             android:id="@+id/Reg_password"
@@ -71,7 +77,8 @@
             android:inputType="textPassword"
             android:padding="@dimen/_5sdp"
             android:singleLine="true"
-            android:textSize="@dimen/_13sdp" />
+            android:textSize="@dimen/_13sdp"
+            tools:ignore="HardcodedText" />
 
         <android.support.v7.widget.AppCompatEditText
             android:id="@+id/etAddress"
@@ -83,7 +90,8 @@
             android:hint="Enter Address"
             android:padding="@dimen/_5sdp"
             android:singleLine="true"
-            android:textSize="@dimen/_13sdp" />
+            android:textSize="@dimen/_13sdp"
+            tools:ignore="HardcodedText" />
 
         <android.support.v7.widget.AppCompatEditText
             android:id="@+id/etCity"
@@ -95,7 +103,8 @@
             android:hint="City,State"
             android:padding="@dimen/_5sdp"
             android:singleLine="true"
-            android:textSize="@dimen/_13sdp" />
+            android:textSize="@dimen/_13sdp"
+            tools:ignore="HardcodedText" />
 
 
         <Button
@@ -108,7 +117,8 @@
             android:text="Next"
             android:textAllCaps="false"
             android:textColor="@color/colorBlue2"
-            android:textSize="@dimen/_13sdp" />
+            android:textSize="@dimen/_13sdp"
+            tools:ignore="HardcodedText" />
 
         <Button
             android:id="@+id/btnCancel"
@@ -119,7 +129,8 @@
             android:text="Cancel"
             android:textAllCaps="false"
             android:textColor="@color/colorBlue2"
-            android:textSize="@dimen/_13sdp" />
+            android:textSize="@dimen/_13sdp"
+            tools:ignore="HardcodedText" />
 
 
     </LinearLayout>

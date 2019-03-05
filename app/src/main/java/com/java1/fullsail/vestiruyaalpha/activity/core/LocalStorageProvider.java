@@ -1,5 +1,6 @@
 package com.java1.fullsail.vestiruyaalpha.activity.core;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.res.AssetFileDescriptor;
 import android.database.Cursor;
@@ -25,6 +26,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 
+@SuppressWarnings("RedundantThrows")
+@SuppressLint("Registered")
 @TargetApi(Build.VERSION_CODES.KITKAT)
 public class LocalStorageProvider extends DocumentsProvider {
 

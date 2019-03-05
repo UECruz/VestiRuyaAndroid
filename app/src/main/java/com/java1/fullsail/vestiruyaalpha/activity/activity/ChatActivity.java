@@ -1,5 +1,6 @@
 package com.java1.fullsail.vestiruyaalpha.activity.activity;
 
+import android.annotation.SuppressLint;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+@SuppressWarnings("ALL")
 public class ChatActivity extends BaseActivity {
 
     private ActivityChatBinding binding;
@@ -66,7 +68,7 @@ public class ChatActivity extends BaseActivity {
                     Toast.makeText(mActivity,"Please enter message",Toast.LENGTH_LONG).show();
                 }
                 else {
-                    SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd-HH:mm:ss.SSS");
+                    @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd-HH:mm:ss.SSS");
                     String currentDateandTime = sdf.format(new Date());
 
                     HashMap<String, Object> result = new HashMap<>();

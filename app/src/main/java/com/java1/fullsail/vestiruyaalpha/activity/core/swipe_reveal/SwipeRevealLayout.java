@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 
 import com.java1.fullsail.vestiruyaalpha.R;
 
+@SuppressWarnings("ALL")
 @SuppressLint("RtlHardcoded")
 public class SwipeRevealLayout extends ViewGroup {
     protected static final int STATE_CLOSE     = 0;
@@ -88,6 +89,7 @@ public class SwipeRevealLayout extends ViewGroup {
         void onOpened(SwipeRevealLayout view);
 
 
+        @SuppressWarnings("EmptyMethod")
         void onSlide(SwipeRevealLayout view, float slideOffset);
     }
 
@@ -116,6 +118,7 @@ public class SwipeRevealLayout extends ViewGroup {
         super(context, attrs, defStyleAttr);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         mGestureDetector.onTouchEvent(event);
@@ -181,8 +184,10 @@ public class SwipeRevealLayout extends ViewGroup {
             boolean matchParentWidth = false;
 
             if (childParams != null) {
+                //noinspection deprecation
                 matchParentHeight = (childParams.height == LayoutParams.MATCH_PARENT) ||
                         (childParams.height == LayoutParams.FILL_PARENT);
+                //noinspection deprecation
                 matchParentWidth = (childParams.width == LayoutParams.MATCH_PARENT) ||
                         (childParams.width == LayoutParams.FILL_PARENT);
             }

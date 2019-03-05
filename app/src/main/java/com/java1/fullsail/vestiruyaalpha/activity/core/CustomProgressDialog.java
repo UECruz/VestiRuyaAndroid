@@ -7,8 +7,6 @@ import android.view.Window;
 
 import com.java1.fullsail.vestiruyaalpha.R;
 
-import java.util.Objects;
-
 public class CustomProgressDialog extends Dialog {
 
     public CustomProgressDialog(Context context) {

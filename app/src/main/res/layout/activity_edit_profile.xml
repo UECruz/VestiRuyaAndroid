@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -31,7 +32,9 @@
                         android:layout_centerVertical="true"
                         android:src="@drawable/back_icon"
                         android:tint="@color/colorBlue2"
-                        android:layout_marginLeft="@dimen/_10sdp"/>
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:contentDescription="TODO"
+                        tools:ignore="RtlHardcoded" />
 
                     <TextView
                         android:id="@+id/tvUserName"
@@ -42,7 +45,8 @@
                         android:singleLine="true"
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/_14sdp"
-                        android:text="Edit Profile"/>
+                        android:text="Edit Profile"
+                        tools:ignore="HardcodedText" />
 
 
                 </RelativeLayout>
@@ -68,7 +72,8 @@
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="center_horizontal"
                     android:src="@drawable/ic_placeholder"
-                    android:layout_marginTop="@dimen/_10sdp"/>
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:contentDescription="TODO" />
 
                 <RelativeLayout
                     android:id="@+id/rlSelect"
@@ -83,7 +88,8 @@
                         android:layout_height="wrap_content"
                         android:text="Select Form Gallery"
                         android:layout_centerInParent="true"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/black"
+                        tools:ignore="HardcodedText" />
 
                 </RelativeLayout>
 
@@ -94,7 +100,8 @@
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:layout_marginRight="@dimen/_20sdp"
                     android:weightSum="1"
-                    android:layout_marginTop="@dimen/_20sdp">
+                    android:layout_marginTop="@dimen/_20sdp"
+                    tools:ignore="RtlHardcoded">
 
                     <TextView
                         android:layout_width="0dp"
@@ -103,7 +110,8 @@
                         android:textSize="@dimen/_14sdp"
                         android:textColor="@color/black"
                         android:layout_weight="0.3"
-                        android:layout_gravity="center_vertical"/>
+                        android:layout_gravity="center_vertical"
+                        tools:ignore="HardcodedText" />
 
                     <android.support.v7.widget.AppCompatEditText
                         android:id="@+id/edtName"
@@ -114,7 +122,8 @@
                         android:textSize="@dimen/_13sdp"
                         android:layout_weight="0.7"
                         android:hint="Name"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        tools:ignore="HardcodedText" />
 
                 </LinearLayout>
                 <LinearLayout
@@ -124,7 +133,8 @@
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:weightSum="1"
                     android:layout_marginTop="@dimen/_15sdp"
-                    android:layout_marginRight="@dimen/_20sdp">
+                    android:layout_marginRight="@dimen/_20sdp"
+                    tools:ignore="RtlHardcoded">
 
                     <TextView
                         android:layout_width="0dp"
@@ -133,7 +143,8 @@
                         android:textSize="@dimen/_14sdp"
                         android:textColor="@color/black"
                         android:layout_weight="0.3"
-                        android:layout_gravity="center_vertical"/>
+                        android:layout_gravity="center_vertical"
+                        tools:ignore="HardcodedText" />
 
                     <android.support.v7.widget.AppCompatEditText
                         android:id="@+id/edtAddress"
@@ -144,7 +155,8 @@
                         android:textSize="@dimen/_13sdp"
                         android:layout_weight="0.7"
                         android:hint="Address"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        tools:ignore="HardcodedText" />
 
                 </LinearLayout>
 
@@ -155,7 +167,8 @@
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:weightSum="1"
                     android:layout_marginTop="@dimen/_15sdp"
-                    android:layout_marginRight="@dimen/_20sdp">
+                    android:layout_marginRight="@dimen/_20sdp"
+                    tools:ignore="RtlHardcoded">
 
                     <TextView
                         android:layout_width="0dp"
@@ -164,7 +177,8 @@
                         android:textSize="@dimen/_14sdp"
                         android:textColor="@color/black"
                         android:layout_weight="0.3"
-                        android:layout_gravity="center_vertical"/>
+                        android:layout_gravity="center_vertical"
+                        tools:ignore="HardcodedText" />
 
                     <android.support.v7.widget.AppCompatEditText
                         android:id="@+id/edtAddress2"
@@ -175,7 +189,8 @@
                         android:textSize="@dimen/_13sdp"
                         android:layout_weight="0.7"
                         android:hint="Address"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        tools:ignore="HardcodedText" />
 
                 </LinearLayout>
 
@@ -186,7 +201,8 @@
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:weightSum="1"
                     android:layout_marginTop="@dimen/_15sdp"
-                    android:layout_marginRight="@dimen/_20sdp">
+                    android:layout_marginRight="@dimen/_20sdp"
+                    tools:ignore="RtlHardcoded">
 
                     <TextView
                         android:layout_width="0dp"
@@ -195,7 +211,8 @@
                         android:textSize="@dimen/_14sdp"
                         android:textColor="@color/black"
                         android:layout_weight="0.3"
-                        android:layout_gravity="center_vertical"/>
+                        android:layout_gravity="center_vertical"
+                        tools:ignore="HardcodedText" />
 
                     <android.support.v7.widget.AppCompatEditText
                         android:id="@+id/edtEmail"
@@ -210,7 +227,8 @@
                         android:focusable="false"
                         android:clickable="false"
                         android:gravity="center"
-                        android:inputType="textEmailAddress"/>
+                        android:inputType="textEmailAddress"
+                        tools:ignore="Deprecated,HardcodedText" />
 
                 </LinearLayout>
 
@@ -221,7 +239,8 @@
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:weightSum="1"
                     android:layout_marginTop="@dimen/_15sdp"
-                    android:layout_marginRight="@dimen/_20sdp">
+                    android:layout_marginRight="@dimen/_20sdp"
+                    tools:ignore="RtlHardcoded">
 
                     <TextView
                         android:layout_width="0dp"
@@ -230,7 +249,8 @@
                         android:textSize="@dimen/_14sdp"
                         android:textColor="@color/black"
                         android:layout_weight="0.3"
-                        android:layout_gravity="center_vertical"/>
+                        android:layout_gravity="center_vertical"
+                        tools:ignore="HardcodedText" />
 
                     <android.support.v7.widget.AppCompatEditText
                         android:id="@+id/edtPassword"
@@ -241,9 +261,116 @@
                         android:textSize="@dimen/_13sdp"
                         android:layout_weight="0.7"
                         android:hint="Password"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        tools:ignore="HardcodedText" />
 
                 </LinearLayout>
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_15sdp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/iv1"
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="@dimen/_100sdp"
+                                android:scaleType="centerCrop"
+                                android:contentDescription="TODO" />
+                            <RelativeLayout
+                                android:id="@+id/upload1"
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:background="#A9CBFF"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/_20sdp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Upload"
+                                    android:layout_centerInParent="true"
+                                    android:textColor="@color/black"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/iv2"
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="@dimen/_100sdp"
+                                android:layout_marginLeft="@dimen/_10sdp"
+                                android:scaleType="centerCrop"
+                                android:contentDescription="TODO"
+                                tools:ignore="RtlHardcoded" />
+                            <RelativeLayout
+                                android:id="@+id/upload2"
+                                android:layout_marginLeft="@dimen/_10sdp"
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:background="#A9CBFF"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/_20sdp"
+                                tools:ignore="RtlHardcoded">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Upload"
+                                    android:layout_centerInParent="true"
+                                    android:textColor="@color/black"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/iv3"
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="@dimen/_100sdp"
+                                android:layout_marginLeft="@dimen/_10sdp"
+                                android:scaleType="centerCrop"
+                                android:contentDescription="TODO"
+                                tools:ignore="RtlHardcoded" />
+                            <RelativeLayout
+                                android:id="@+id/upload3"
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:background="#A9CBFF"
+                                android:layout_marginLeft="@dimen/_10sdp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/_20sdp"
+                                tools:ignore="RtlHardcoded">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Upload"
+                                    android:layout_centerInParent="true"
+                                    android:textColor="@color/black"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </HorizontalScrollView>
 
                 <RelativeLayout
                     android:id="@+id/rlSave"
@@ -258,7 +385,8 @@
                         android:layout_height="wrap_content"
                         android:text="Save"
                         android:layout_centerInParent="true"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/black"
+                        tools:ignore="HardcodedText" />
 
                 </RelativeLayout>
             </LinearLayout>

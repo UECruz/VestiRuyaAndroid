@@ -1,11 +1,13 @@
 package com.java1.fullsail.vestiruyaalpha.activity.core;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 
 import java.text.SimpleDateFormat;
 
 public class Constant {
 
+    @SuppressLint("SimpleDateFormat")
     public static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     public static boolean IS_DEBUG = true;
     public static final String SF_IS_TOKEN_SENT = "sf_is_token_sent";
@@ -33,6 +35,8 @@ public class Constant {
 
     public static final String tailors_sample_images = "tailors_sample_images";
     public static final String customers_sample_images = "customers_sample_images";
+
+    public static final String orders_images = "orders_images";
 
     public static final String Measurement = "Measurement";
 

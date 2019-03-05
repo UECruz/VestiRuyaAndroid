@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="IconExtension">
+        <ignore path="src/main/res/drawable/banner.jpg" />
+    </issue>
+    <issue id="IconLocation">
+        <ignore path="src/main/res/drawable/back_icon.png" />
+        <ignore path="src/main/res/drawable/banner.jpg" />
+        <ignore path="src/main/res/drawable/ic_attachment.png" />
+        <ignore path="src/main/res/drawable/ic_chat.png" />
+        <ignore path="src/main/res/drawable/ic_edit.png" />
+        <ignore path="src/main/res/drawable/ic_flowersketch.png" />
+        <ignore path="src/main/res/drawable/ic_job.png" />
+        <ignore path="src/main/res/drawable/ic_job_done.png" />
+        <ignore path="src/main/res/drawable/ic_placeholder.png" />
+        <ignore path="src/main/res/drawable/ic_user.png" />
+        <ignore path="src/main/res/drawable/star.png" />
+        <ignore path="src/main/res/drawable/star_empty.png" />
+    </issue>
+</lint>

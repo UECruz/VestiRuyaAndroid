@@ -13,20 +13,21 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 import com.java1.fullsail.vestiruyaalpha.R;
-import com.java1.fullsail.vestiruyaalpha.activity.core.CommonUtils;
 import com.java1.fullsail.vestiruyaalpha.activity.model.User;
 import com.java1.fullsail.vestiruyaalpha.databinding.ActivityCustomerInfoTailorBinding;
 
+@SuppressWarnings("ALL")
 public class CustomerInfoTailorActivity extends BaseActivity {
     ActivityCustomerInfoTailorBinding binding;
     private String userType;
-    private User user;
+    private  User user;
     String customerId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mActivity = this;
         binding = DataBindingUtil.setContentView(mActivity, R.layout.activity_customer_info_tailor);
+        //User user=getProfileData(mActivity);
         setUpClicks();
 
         userType= "Customers";
@@ -52,8 +53,9 @@ public class CustomerInfoTailorActivity extends BaseActivity {
                     binding.tvCity.setText(dataSnapshot.child("city").getValue().toString());
                 }
                 user.setKey(dataSnapshot.getKey());
-                saveProfileData(mActivity, user);
+                //  saveProfileData(mActivity, user);
 
+                //user.setKey(dataSnapshot.getKey());
 
                 binding.tvName.setText(user.getUsername());
                 binding.tvEmail.setText(user.getEmail());
@@ -67,9 +69,16 @@ public class CustomerInfoTailorActivity extends BaseActivity {
                     binding.tvAddress.setVisibility(View.GONE);
                 }
 
+                //binding.tvAddress.setText(user.getAddress());
+
                 if(user.getProfilePic()!=null && !user.getProfilePic().isEmpty())
                 {
 
+                   /* Glide.with(this).placeholder(R.drawable.placeholder)
+                            .load(user.getProfilePic())// image url
+                            .into(binding.icProfile);*/
+
+                    //Picasso.get().load(user.getProfilePic()).placeholder(R.drawable.ic_placeholder).into(binding.icProfile);
 
                     RequestOptions options = new RequestOptions()
                             .centerCrop()
@@ -80,18 +89,24 @@ public class CustomerInfoTailorActivity extends BaseActivity {
                 }
 
 
+                //CommonUtils.setStringSharedPref(mActivity,Constant.SF_Type,userType);
+                //CommonUtils.setBooleanPref(mActivity, Constant.SF_IS_LOGIN, true);
+                //user = getProfileData(mActivity);
+
+                //CommonUtils.redirectToActivity(mActivity, mActivity, MainActivity.class, true, null, Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 mDialog.closeDialog();
+                //Toast.makeText(mActivity, "Invalid Credentials", Toast.LENGTH_SHORT).show();
             }
         });
     }
     private void setUpClicks() {
 
-        binding.btnLogout.setOnClickListener(this);
+        binding.btnMeasurement.setOnClickListener(this);
         binding.icEdit.setOnClickListener(this);
         binding.icBack.setOnClickListener(this);
     }
@@ -102,12 +117,11 @@ public class CustomerInfoTailorActivity extends BaseActivity {
         switch (view.getId())
         {
 
-            case R.id.btnLogout:
-                CommonUtils.clearSharedPrefs(mActivity);
-                Intent i=new Intent(mActivity,LoginActivity.class);
-                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            case R.id.btnMeasurement:
+                //  CommonUtils.clearSharedPrefs(mActivity);
+                Intent i=new Intent(mActivity,CustomerInfoActivity.class);
+                i.putExtra("customerId",customerId);
                 startActivity(i);
-                finish();
                 break;
 
             case R.id.icEdit:
@@ -133,6 +147,10 @@ public class CustomerInfoTailorActivity extends BaseActivity {
                 if(data.getExtras()!=null)
                 {
 
+                   /*i.putExtra("username",binding.edtName.getText().toString());
+                   i.putExtra("email",binding.edtEmail.getText().toString());
+                   i.putExtra("address",binding.edtAddress.getText().toString());
+                   i.putExtra("password",binding.edtPassword.getText().toString());*/
 
                     String name=data.getStringExtra("username");
                     String email=data.getStringExtra("email");
@@ -151,6 +169,7 @@ public class CustomerInfoTailorActivity extends BaseActivity {
 
                     Glide.with(mActivity).load(download).apply(options).into(binding.icProfile);
 
+                    //binding.
                 }
             }
         }

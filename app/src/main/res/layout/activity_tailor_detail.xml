@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -30,7 +32,8 @@
                         android:singleLine="true"
                         android:text="Cancel"
                         android:textColor="@color/colorBlue2"
-                        android:textSize="@dimen/_14sdp" />
+                        android:textSize="@dimen/_14sdp"
+                        tools:ignore="HardcodedText" />
 
                     <TextView
                         android:id="@+id/tvTitle"
@@ -39,9 +42,10 @@
                         android:layout_centerVertical="true"
                         android:gravity="center"
                         android:singleLine="true"
-                        android:text="Title"
+                        android:text="Tailor Additional Info"
                         android:textColor="@android:color/black"
-                        android:textSize="@dimen/_13sdp" />
+                        android:textSize="@dimen/_13sdp"
+                        tools:ignore="HardcodedText" />
 
 
                 </RelativeLayout>
@@ -63,7 +67,9 @@
                 android:layout_height="@dimen/_120sdp"
                 android:layout_gravity="center_horizontal"
                 android:scaleType="fitXY"
-                android:src="@drawable/banner" />
+                android:src="@drawable/banner"
+                android:contentDescription="TODO"
+                tools:ignore="ContentDescription" />
 
 
             <TextView
@@ -73,7 +79,8 @@
                 android:layout_marginTop="@dimen/_2sdp"
                 android:gravity="center"
                 android:text="username"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/tvEmail"
@@ -81,7 +88,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Email"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/tcPass"
@@ -89,7 +97,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Pass"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/tvCity"
@@ -97,7 +106,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="City"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -107,7 +117,8 @@
                 android:text="Sample of Work:"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/_10sdp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -129,7 +140,9 @@
                         android:id="@+id/iv1"
                         android:layout_width="@dimen/_55sdp"
                         android:layout_height="@dimen/_55sdp"
-                        android:scaleType="centerCrop" />
+                        android:scaleType="centerCrop"
+                        android:contentDescription="TODO"
+                        tools:ignore="HardcodedText" />
 
                     <TextView
                         android:id="@+id/tvSelect1"
@@ -139,7 +152,8 @@
                         android:padding="@dimen/_2sdp"
                         android:text="Select work"
                         android:textColor="@color/colorBlue2"
-                        android:textSize="@dimen/_11sdp" />
+                        android:textSize="@dimen/_11sdp"
+                        tools:ignore="HardcodedText" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -155,7 +169,8 @@
                         android:id="@+id/iv2"
                         android:layout_width="@dimen/_55sdp"
                         android:layout_height="@dimen/_55sdp"
-                        android:scaleType="centerCrop" />
+                        android:scaleType="centerCrop"
+                        android:contentDescription="TODO" />
 
                     <TextView
                         android:id="@+id/tvSelect2"
@@ -165,7 +180,8 @@
                         android:padding="@dimen/_2sdp"
                         android:text="Select work"
                         android:textColor="@color/colorBlue2"
-                        android:textSize="@dimen/_11sdp" />
+                        android:textSize="@dimen/_11sdp"
+                        tools:ignore="HardcodedText" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -181,7 +197,8 @@
                         android:id="@+id/iv3"
                         android:layout_width="@dimen/_55sdp"
                         android:layout_height="@dimen/_55sdp"
-                        android:scaleType="centerCrop" />
+                        android:scaleType="centerCrop"
+                        android:contentDescription="TODO" />
 
                     <TextView
                         android:id="@+id/tvSelect3"
@@ -191,7 +208,8 @@
                         android:padding="@dimen/_2sdp"
                         android:text="Select work"
                         android:textColor="@color/colorBlue2"
-                        android:textSize="@dimen/_11sdp" />
+                        android:textSize="@dimen/_11sdp"
+                        tools:ignore="HardcodedText" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -205,7 +223,8 @@
                 android:text="Submit"
                 android:textAllCaps="false"
                 android:textColor="@color/colorBlue2"
-                android:textSize="@dimen/_12sdp" />
+                android:textSize="@dimen/_12sdp"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
     </LinearLayout>
 </layout>

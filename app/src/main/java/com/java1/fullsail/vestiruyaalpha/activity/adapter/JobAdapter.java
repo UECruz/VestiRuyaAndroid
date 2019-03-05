@@ -1,5 +1,6 @@
 package com.java1.fullsail.vestiruyaalpha.activity.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -19,7 +20,7 @@ import com.java1.fullsail.vestiruyaalpha.activity.model.JobModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobHolder> {
+public class JobAdapter extends RecyclerView.Adapter<JobAdapter.MyViewHolder> {
 
     private List<JobModel> list=new ArrayList<>();
     private Context ctx;
@@ -39,15 +40,16 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobHolder> {
 
     @NonNull
     @Override
-    public JobHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public JobAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.layout_job_adapter, viewGroup, false);
 
-        return new JobHolder(itemView);
+        return new MyViewHolder(itemView);
     }
 
+    @SuppressLint({"DefaultLocale", "SetTextI18n"})
     @Override
-    public void onBindViewHolder(@NonNull JobHolder myViewHolder, int i) {
+    public void onBindViewHolder(@NonNull JobAdapter.MyViewHolder myViewHolder, int i) {
 
         JobModel model=list.get(i);
 
@@ -78,13 +80,14 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobHolder> {
         return list.size();
     }
 
-    public class JobHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private ImageView icImage;
+        @SuppressWarnings("CanBeFinal")
         private TextView tvName,tvPrice;
         private RelativeLayout rlMain;
 
-        public JobHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             icImage=itemView.findViewById(R.id.icImage);
             tvName=itemView.findViewById(R.id.tvName);

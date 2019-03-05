@@ -6,36 +6,27 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 import com.java1.fullsail.vestiruyaalpha.R;
-import com.java1.fullsail.vestiruyaalpha.activity.adapter.OrderAdapter;
-import com.java1.fullsail.vestiruyaalpha.activity.core.CommonUtils;
-import com.java1.fullsail.vestiruyaalpha.activity.core.Constant;
 import com.java1.fullsail.vestiruyaalpha.activity.model.Measurement;
-import com.java1.fullsail.vestiruyaalpha.activity.model.OrderModel;
-import com.java1.fullsail.vestiruyaalpha.activity.model.User;
 import com.java1.fullsail.vestiruyaalpha.databinding.ActivityCustomerInfoBinding;
-import com.java1.fullsail.vestiruyaalpha.databinding.ActivityMainBinding;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
-
+@SuppressWarnings("ALL")
 public class CustomerInfoActivity extends BaseActivity {
 
     ActivityCustomerInfoBinding binding;
     private String customerId;
-    private String customerName;
+    private String userId;
     private Measurement.MeasureItem measureItem;
-    private  User user;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,8 +35,7 @@ public class CustomerInfoActivity extends BaseActivity {
         binding = DataBindingUtil.setContentView(mActivity, R.layout.activity_customer_info);
 
         customerId = getIntent().getStringExtra("customerId");
-//        customerName = getIntent().getStringExtra("name");
-//        binding.tvUsername.setText(customerName);
+        //userId=getIntent().getStringExtra("userId");
         setListeners();
 
         loadData();
@@ -56,18 +46,28 @@ public class CustomerInfoActivity extends BaseActivity {
 
         //mDatabase.
         mDialog.showCustomDalog();
-        mDatabase.child("Customers").child("Measurement").addListenerForSingleValueEvent(new ValueEventListener() {
+        mDatabase.child("Customers").child("Measurement").orderByChild("userId").equalTo(customerId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 mDialog.closeDialog();
+                if (dataSnapshot.getValue() == null) {
+                    Toast.makeText(CustomerInfoActivity.this,"User measurement Not found.",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
                 for (DataSnapshot childSnap:dataSnapshot.getChildren()) {
 
                     String key=childSnap.getKey();
                     Measurement model=childSnap.getValue(Measurement.class);
+                    Log.d("userIdName",model.getUsername());
+                    Log.d("userId",model.getUserId());
+
                     if(model!=null && model.getMeasureItem()!=null && model.getUserId().equals(customerId))
                     {
                         measureItem=model.getMeasureItem();
+                        binding.tvUsernamee.setText(model.getUsername());
                         binding.tvHeight.setText(measureItem.getHeight());
                         binding.tvNeckCIR.setText(measureItem.getNeck());
                         binding.tvChestCIR.setText(measureItem.getChest());
@@ -77,6 +77,9 @@ public class CustomerInfoActivity extends BaseActivity {
                         binding.tvLegLength.setText(measureItem.getLeg());
 
                     }
+                    /*OrderModel orderModel = childSnap.getValue(OrderModel.class);
+                    orderModel.setOrderId(childSnap.getKey());
+                    orderModels.add(orderModel);*/
                 }
             }
 

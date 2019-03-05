@@ -1,5 +1,6 @@
 package com.java1.fullsail.vestiruyaalpha.activity.activity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -44,7 +45,6 @@ public class PaymentActivity extends BaseActivity {
         binding.tvPrice.setText(tailorJob.getPrice());
         setUpClicks();
 
-        //Paypal Configuration Object
         config = new PayPalConfiguration()
                 .environment(PayPalConfiguration.ENVIRONMENT_NO_NETWORK)
                 .clientId(PayPalConfig.PAYPAL_CLIENT_ID);
@@ -75,7 +75,7 @@ public class PaymentActivity extends BaseActivity {
             case R.id.rlDone:
 
                 //getPayment();
-                SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
+                @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
                 String currentDateandTime = sdf.format(new Date());
 
                 if(binding.edtReview.getText().toString()!=null && !binding.edtReview.getText().toString().isEmpty())

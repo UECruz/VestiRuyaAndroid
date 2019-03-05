@@ -34,11 +34,14 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+@SuppressWarnings({"ALL", "WhileLoopReplaceableByForEach"})
 public class TailorDetailActivity extends BaseActivity {
     ActivityTailorDetailBinding binding;
     private final int PERMISSION_ALL = 100;
     private String[] PERMISSIONS = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
+    @SuppressWarnings("FieldCanBeLocal")
     private Uri fileUri;
+    @SuppressLint("UseSparseArrays")
     HashMap<Integer, String> hashMap = new HashMap<>();
     int index;
 
@@ -165,6 +168,7 @@ public class TailorDetailActivity extends BaseActivity {
                 } else {
                     Toast.makeText(mActivity, "Please grant permission to access files to add images", Toast.LENGTH_SHORT).show();
                 }
+                //noinspection UnnecessaryReturnStatement
                 return;
         }
     }

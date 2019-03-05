@@ -10,6 +10,24 @@ public class TailorJob extends BaseModel {
     private String price;
     private String userId;
     private ItemModel2 items;
+    private String date;
+    private String picUrl;
+
+    public String getPicUrl() {
+        return picUrl;
+    }
+
+    public void setPicUrl(String picUrl) {
+        this.picUrl = picUrl;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public boolean getisAccepted() {
         return isAccepted;
@@ -74,5 +92,4 @@ public class TailorJob extends BaseModel {
     public void setItems(ItemModel2 items) {
         this.items = items;
     }
-
 }

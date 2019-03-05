@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ScrollView
@@ -18,7 +19,9 @@
                 android:layout_height="@dimen/_170sdp"
                 android:layout_margin="@dimen/_10sdp"
                 android:scaleType="fitXY"
-                android:src="@drawable/banner" />
+                android:src="@drawable/banner"
+                android:contentDescription="TODO"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -28,7 +31,8 @@
                 android:gravity="center"
                 android:text="Welcome are you:"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/_14sdp" />
+                android:textSize="@dimen/_14sdp"
+                tools:ignore="HardcodedText" />
 
             <android.support.v7.widget.AppCompatButton
                 android:id="@+id/btnTailor"
@@ -38,7 +42,8 @@
                 android:text="Tailor"
                 android:textAllCaps="false"
                 android:textSize="@dimen/_13sdp"
-                app:backgroundTint="@color/colorBlue" />
+                app:backgroundTint="@color/colorBlue"
+                tools:ignore="HardcodedText" />
 
             <android.support.v7.widget.AppCompatButton
                 android:id="@+id/btnCustmoer"
@@ -48,7 +53,8 @@
                 android:text="Customer"
                 android:textAllCaps="false"
                 android:textSize="@dimen/_13sdp"
-                app:backgroundTint="@color/colorBlue" />
+                app:backgroundTint="@color/colorBlue"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
 
     </ScrollView>

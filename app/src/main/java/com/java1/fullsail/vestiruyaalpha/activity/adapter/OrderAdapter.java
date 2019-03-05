@@ -1,5 +1,6 @@
 package com.java1.fullsail.vestiruyaalpha.activity.adapter;
 
+import android.annotation.SuppressLint;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,7 +13,6 @@ import com.java1.fullsail.vestiruyaalpha.R;
 import com.java1.fullsail.vestiruyaalpha.activity.OnItemClickListener;
 import com.java1.fullsail.vestiruyaalpha.activity.core.swipe_reveal.ViewBinderHelper;
 import com.java1.fullsail.vestiruyaalpha.activity.model.JobModel;
-import com.java1.fullsail.vestiruyaalpha.activity.model.OrderModel;
 import com.java1.fullsail.vestiruyaalpha.databinding.OrderItemLayoutBinding;
 
 import java.util.ArrayList;
@@ -60,6 +60,7 @@ public class OrderAdapter extends RecyclerView.Adapter{
             binding = DataBindingUtil.bind(itemView);
         }
 
+        @SuppressLint({"DefaultLocale", "SetTextI18n"})
         public void bind(final JobModel data) {
             binding.frontLayout.setOnClickListener(new View.OnClickListener() {
                 @Override

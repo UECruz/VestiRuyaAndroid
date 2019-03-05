@@ -1,6 +1,7 @@
 package com.java1.fullsail.vestiruyaalpha.activity.core;
 
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -22,6 +23,7 @@ import java.io.IOException;
 import java.util.Calendar;
 
 
+@SuppressWarnings("FinalStaticMethod")
 public class CommonUtils {
 
     public static void redirectToActivity(Context c, Activity from, Class to, boolean isFinish, Bundle b, int flag) {
@@ -71,6 +73,7 @@ public class CommonUtils {
     }
 
 
+    @SuppressLint("CommitPrefEdits")
     public static void setEditor(Context p_context) {
 
         setSharedPreference(p_context);
@@ -231,6 +234,7 @@ public class CommonUtils {
         return true;
     }
 
+    @SuppressWarnings("FinalStaticMethod")
     public final static boolean isValidEmail(CharSequence target) {
         if (target == null) {
             return false;

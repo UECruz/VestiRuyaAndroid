@@ -1,5 +1,6 @@
 package com.java1.fullsail.vestiruyaalpha.activity.activity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import com.java1.fullsail.vestiruyaalpha.activity.core.Constant;
 import com.java1.fullsail.vestiruyaalpha.activity.core.CustomProgressDialog;
 import com.java1.fullsail.vestiruyaalpha.activity.model.User;
 
+@SuppressLint("Registered")
 public class BaseActivity extends AppCompatActivity implements View.OnClickListener{
     Activity mActivity;
     protected FirebaseAuth mAuth;

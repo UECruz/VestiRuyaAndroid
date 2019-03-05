@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/rlMain">
 
@@ -10,13 +12,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/_20sdp"
-        android:layout_marginTop="@dimen/_10sdp">
+        android:layout_marginTop="@dimen/_10sdp"
+        tools:ignore="RtlHardcoded">
 
         <ImageView
             android:id="@+id/icImage"
             android:layout_width="@dimen/_50sdp"
             android:layout_height="@dimen/_50sdp"
-            android:layout_margin="@dimen/_7sdp"/>
+            android:layout_margin="@dimen/_7sdp"
+            android:contentDescription="TODO"
+            tools:ignore="HardcodedText" />
 
     </RelativeLayout>
 
@@ -26,7 +31,8 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/rlImage"
         android:layout_centerVertical="true"
-        android:layout_marginRight="@dimen/_10sdp">
+        android:layout_marginRight="@dimen/_10sdp"
+        tools:ignore="RtlHardcoded">
 
         <TextView
             android:id="@+id/tvName"
@@ -36,7 +42,8 @@
             android:textSize="@dimen/_14sdp"
             android:text="abc"
             android:textColor="@color/black"
-            android:gravity="center"/>
+            android:gravity="center"
+            tools:ignore="HardcodedText,RtlHardcoded" />
 
 
         <TextView
@@ -49,7 +56,8 @@
             android:textSize="@dimen/_14sdp"
             android:text="xyz"
             android:textColor="@color/black"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            tools:ignore="HardcodedText,RtlHardcoded" />
 
     </RelativeLayout>
 

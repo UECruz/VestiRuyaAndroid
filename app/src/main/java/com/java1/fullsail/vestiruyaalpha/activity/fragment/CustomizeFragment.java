@@ -214,29 +214,33 @@ public class CustomizeFragment extends BaseFragment {
             case R.id.btnNext:
                 if (adapter.selectedIndex > -1) {
                     if (pos == 6) {
-                        ((CustomizeActivity) mActivity).summeryMap.put("embellishment", list.get(adapter.selectedIndex).getName());
+                        ((CustomizeActivity) mActivity).summeryMap.put("embellishment", list);
                         //goto summary screen
                         Intent mIntent = new Intent(mActivity, SummaryActivity.class);
                         if (isEdit) {
                             mIntent.putExtra("isEdit", true);
                             mIntent.putExtra("orderId", orderId);
                         }
+//                        Gson gson = new Gson();
+//                        String list = gson.toJson(((CustomizeActivity) mActivity).summeryMap);
                         mIntent.putExtra("data", ((CustomizeActivity) mActivity).summeryMap);
                         startActivity(mIntent);
                         mActivity.finish();
                     } else {
                         if (pos == 0) {
-                            ((CustomizeActivity) mActivity).summeryMap.put("bodytype", list.get(adapter.selectedIndex).getName());
+                            ((CustomizeActivity) mActivity).summeryMap.put("bodytype", list);
+                            //  Log.e("message",((CustomizeActivity) mActivity).summeryMap.get(1).get(0).getName());
                         } else if (pos == 1) {
-                            ((CustomizeActivity) mActivity).summeryMap.put("fabrics", list.get(adapter.selectedIndex).getName());
+                            ((CustomizeActivity) mActivity).summeryMap.put("fabrics", list);
+                            Log.e("message",((CustomizeActivity) mActivity).summeryMap.get("fabrics").get(0).getName());
                         } else if (pos == 2) {
-                            ((CustomizeActivity) mActivity).summeryMap.put("neckline", list.get(adapter.selectedIndex).getName());
+                            ((CustomizeActivity) mActivity).summeryMap.put("neckline", list);
                         } else if (pos == 3) {
-                            ((CustomizeActivity) mActivity).summeryMap.put("sleeves", list.get(adapter.selectedIndex).getName());
+                            ((CustomizeActivity) mActivity).summeryMap.put("sleeves", list);
                         } else if (pos == 4) {
-                            ((CustomizeActivity) mActivity).summeryMap.put("straps", list.get(adapter.selectedIndex).getName());
+                            ((CustomizeActivity) mActivity).summeryMap.put("straps", list);
                         } else if (pos == 5) {
-                            ((CustomizeActivity) mActivity).summeryMap.put("backDetails", list.get(adapter.selectedIndex).getName());
+                            ((CustomizeActivity) mActivity).summeryMap.put("backDetails", list);
                         }
                         Bundle b = new Bundle();
                         if (isEdit) {

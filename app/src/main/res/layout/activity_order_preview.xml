@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -31,7 +32,9 @@
                         android:layout_centerVertical="true"
                         android:src="@drawable/back_icon"
                         android:tint="@color/colorBlue2"
-                        android:layout_marginLeft="@dimen/_10sdp"/>
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:contentDescription="TODO"
+                        tools:ignore="RtlHardcoded" />
 
                     <TextView
                         android:id="@+id/tvUserName"
@@ -42,7 +45,8 @@
                         android:singleLine="true"
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/_14sdp"
-                        android:text="Checking"/>
+                        android:text="Checking"
+                        tools:ignore="HardcodedText" />
 
                     <ImageView
                         android:id="@+id/icEdit"
@@ -53,7 +57,9 @@
                         android:tint="@color/colorBlue2"
                         android:layout_marginRight="@dimen/_10sdp"
                         android:src="@drawable/ic_edit"
-                        android:visibility="gone"/>
+                        android:visibility="gone"
+                        android:contentDescription="TODO"
+                        tools:ignore="RtlHardcoded" />
 
                 </RelativeLayout>
             </android.support.v7.widget.Toolbar>
@@ -72,7 +78,8 @@
                 android:layout_gravity="center_horizontal"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_14sdp"
-                android:layout_marginTop="@dimen/_5sdp"/>
+                android:layout_marginTop="@dimen/_5sdp"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/tvName"
@@ -89,14 +96,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:ignore="RtlHardcoded">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Dress Type:"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/tvDressType"
@@ -105,7 +114,8 @@
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:text=""
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="RtlHardcoded" />
 
             </LinearLayout>
 
@@ -114,14 +124,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:ignore="RtlHardcoded">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Fabric:"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/tvFabric"
@@ -130,7 +142,8 @@
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:text=""
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="RtlHardcoded" />
 
             </LinearLayout>
 
@@ -139,14 +152,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:ignore="RtlHardcoded">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Back Details:"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/tvBackDetails"
@@ -155,7 +170,8 @@
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:text="abc"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="HardcodedText,RtlHardcoded" />
 
             </LinearLayout>
 
@@ -164,14 +180,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:ignore="RtlHardcoded">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Embelishment:"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/tvEmbelishment"
@@ -180,7 +198,8 @@
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:text=""
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="RtlHardcoded" />
 
             </LinearLayout>
 
@@ -189,14 +208,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:ignore="RtlHardcoded">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Neckline:"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/tvNeckline"
@@ -205,7 +226,8 @@
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:text=""
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="RtlHardcoded" />
 
             </LinearLayout>
 
@@ -214,14 +236,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:ignore="RtlHardcoded">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sleeve:"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/tvSleeve"
@@ -230,7 +254,8 @@
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:text=""
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="RtlHardcoded" />
 
             </LinearLayout>
 
@@ -239,14 +264,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:ignore="RtlHardcoded">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Strap:"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/tvStrap"
@@ -255,7 +282,64 @@
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:text=""
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="RtlHardcoded" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal"
+                tools:ignore="RtlHardcoded">
+
+                <TextView
+                    android:id="@+id/label1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tailor Name:"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tvtailorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="RtlHardcoded" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal"
+                tools:ignore="RtlHardcoded">
+
+                <TextView
+                    android:id="@+id/label2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date:"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    tools:ignore="RtlHardcoded" />
 
             </LinearLayout>
             <HorizontalScrollView
@@ -274,21 +358,25 @@
                         android:layout_width="@dimen/_100sdp"
                         android:layout_height="@dimen/_100sdp"
                         android:scaleType="centerCrop"
-                        />
+                        android:contentDescription="TODO" />
 
                     <ImageView
                         android:id="@+id/iv2"
                         android:layout_width="@dimen/_100sdp"
                         android:layout_height="@dimen/_100sdp"
                         android:layout_marginLeft="@dimen/_10sdp"
-                        android:scaleType="centerCrop"/>
+                        android:scaleType="centerCrop"
+                        android:contentDescription="TODO"
+                        tools:ignore="RtlHardcoded" />
 
                     <ImageView
                         android:id="@+id/iv3"
                         android:layout_width="@dimen/_100sdp"
                         android:layout_height="@dimen/_100sdp"
                         android:layout_marginLeft="@dimen/_10sdp"
-                        android:scaleType="centerCrop"/>
+                        android:scaleType="centerCrop"
+                        android:contentDescription="TODO"
+                        tools:ignore="RtlHardcoded" />
                 </LinearLayout>
             </HorizontalScrollView>
 
@@ -318,7 +406,8 @@
                         android:textAllCaps="false"
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/_13sdp"
-                        app:backgroundTint="@color/colorBlue1" />
+                        app:backgroundTint="@color/colorBlue1"
+                        tools:ignore="HardcodedText" />
 
                 </RelativeLayout>
 
@@ -336,7 +425,8 @@
                         android:textAllCaps="false"
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/_13sdp"
-                        app:backgroundTint="@color/colorBlue1" />
+                        app:backgroundTint="@color/colorBlue1"
+                        tools:ignore="HardcodedText" />
 
                 </RelativeLayout>
 
@@ -359,7 +449,8 @@
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/_13sdp"
-                    app:backgroundTint="@color/colorBlue1" />
+                    app:backgroundTint="@color/colorBlue1"
+                    tools:ignore="HardcodedText" />
 
             </RelativeLayout>
         </LinearLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<!--suppress CheckTagEmptyBody -->
+<layout xmlns:tools="http://schemas.android.com/tools">
 
     <data></data>
 
@@ -27,7 +28,8 @@
                 android:gravity="center"
                 android:text="Delete"
                 android:textColor="@android:color/white"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,RtlHardcoded" />
 
             <TextView
                 android:id="@+id/tvEdit"
@@ -39,7 +41,8 @@
                 android:gravity="center"
                 android:text="Edit"
                 android:textColor="@android:color/white"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,RtlHardcoded" />
 
         </RelativeLayout>
 

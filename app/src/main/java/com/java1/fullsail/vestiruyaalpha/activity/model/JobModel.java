@@ -11,6 +11,7 @@ public class JobModel implements Serializable {
     private String tailorID;
     private String userid;
     private String username;
+    private String date;
     public List<InterestsShownModel> interestsShown;
     public ItemModel items;
     public String key;
@@ -93,5 +94,13 @@ public class JobModel implements Serializable {
 
     public void setItemmodel(ItemModel items) {
         this.items = items;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

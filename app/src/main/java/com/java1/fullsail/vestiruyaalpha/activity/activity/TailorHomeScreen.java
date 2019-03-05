@@ -106,6 +106,7 @@ public class TailorHomeScreen extends BaseActivity {
             public void OnItemClick(int position, View v) {
                 Intent i = new Intent(mActivity, JobDetailActivity.class);
                 i.putExtra("key", list.get(position).getKey());
+                i.putExtra("type","job");
                 startActivity(i);
             }
         }, TextViewAdapter.AcceptedType);
@@ -116,7 +117,17 @@ public class TailorHomeScreen extends BaseActivity {
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(mActivity);
         binding.rvHistory.setLayoutManager(mLayoutManager);
         binding.rvHistory.setItemAnimator(new DefaultItemAnimator());
+        mAdapter = new TextViewAdapter(listHistory, new OnItemClickListener() {
+            @Override
+            public void OnItemClick(int position, View v) {
+                Intent i = new Intent(mActivity, JobDetailActivity.class);
+                i.putExtra("key", listHistory.get(position).getKey());
+                i.putExtra("type","history");
+                startActivity(i);
+            }
+        }, TextViewAdapter.HistoryType);
         binding.rvHistory.setAdapter(mAdapter);
+
     }
 
 
